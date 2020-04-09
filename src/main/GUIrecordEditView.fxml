@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="600.0" stylesheets="@buttonStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.RecordEditPage">
+   <children>
+      <VBox layoutX="31.0" layoutY="21.0" prefHeight="466.0" prefWidth="542.0">
+         <children>
+            <GridPane layoutX="10.0" layoutY="152.0" prefHeight="84.0" prefWidth="542.0">
+               <children>
+                  <Label prefHeight="16.0" prefWidth="78.0" stylesheets="@buttonStyle.css" text="RecordID" GridPane.rowIndex="1" />
+                  <Label text="Record Date" GridPane.rowIndex="2" />
+                  <Label text="Grade" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextField fx:id="txfRrecordID" disable="true" editable="false" prefHeight="26.0" prefWidth="119.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button id="basicbutton" fx:id="btnReditRecord" mnemonicParsing="false" onAction="#enableRecordFieldsForEditing" stylesheets="@buttonStyle.css" text="Edit Record" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <DatePicker fx:id="dprRdate" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="cbxRgrades" disable="true" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="76.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="147.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="0.0" prefWidth="25.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="0.0" prefWidth="94.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="132.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="69.0" minHeight="9.0" prefHeight="9.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <GridPane layoutX="31.0" layoutY="48.0" prefHeight="155.0" prefWidth="542.0" stylesheets="@buttonStyle.css">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="71.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="143.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="19.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="0.0" prefWidth="94.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="0.0" prefWidth="135.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="87.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="16.0" prefWidth="78.0" stylesheets="@buttonStyle.css" text="StudentID" />
+                  <Label text="First name" GridPane.rowIndex="1" />
+                  <Label text="Last name" GridPane.rowIndex="2" />
+                  <Label text="ZIP" GridPane.columnIndex="3" />
+                  <Label text="ZIP location" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label text="Email" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <TextField fx:id="txfRStudentID" disable="true" editable="false" prefHeight="26.0" prefWidth="119.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="txfRfirstName" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txfRlastName" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="txfRZIP" disable="true" editable="false" GridPane.columnIndex="4" />
+                  <TextField fx:id="txfRZIPLoc" disable="true" editable="false" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <TextField fx:id="txfRemail" disable="true" editable="false" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Label text="Address" GridPane.rowIndex="3" />
+                  <TextField fx:id="txfRaddress" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="txfRphone" disable="true" editable="false" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <Label text="Phone" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Button id="basicbutton" fx:id="btnReditStudent" mnemonicParsing="false" onAction="#callStudentEditPageFromRecords" stylesheets="@buttonStyle.css" text="Edit Student" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Button id="basicbutton" fx:id="btnRchangeStudent" mnemonicParsing="false" onAction="#changeStudentForThisRecord" stylesheets="@buttonStyle.css" text="Change Student" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+            <GridPane prefHeight="133.0" prefWidth="542.0">
+               <children>
+                  <Label prefHeight="16.0" prefWidth="78.0" stylesheets="@buttonStyle.css" text="CourseID" GridPane.rowIndex="1" />
+                  <Label text="Name" GridPane.rowIndex="2" />
+                  <Label text="Description" GridPane.rowIndex="3" />
+                  <Label text="Credits" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label text="Faculty" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <TextField fx:id="txfRcourseID" disable="true" editable="false" prefHeight="26.0" prefWidth="119.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txfRcourseName" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="txfRcredits" disable="true" editable="false" prefHeight="26.0" prefWidth="176.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <TextField fx:id="txfRfaculty" disable="true" editable="false" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Button id="basicbutton" fx:id="btnReditCourse" mnemonicParsing="false" onAction="#callCourseEditPageFromRecords" stylesheets="@buttonStyle.css" text="Edit Course" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Button id="basicbutton" fx:id="btnRchangeCourse" mnemonicParsing="false" onAction="#changeCourseForThisRecord" stylesheets="@buttonStyle.css" text="Change Course" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="77.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="145.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="0.0" prefWidth="27.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="0.0" prefWidth="94.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="132.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="69.0" minHeight="9.0" prefHeight="9.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <TextArea fx:id="txaRdescription" disable="true" editable="false" prefHeight="98.0" prefWidth="542.0" wrapText="true" />
+         </children>
+      </VBox>
+      <AnchorPane layoutX="2.0" layoutY="495.0" prefHeight="33.0" prefWidth="600.0">
+         <children>
+            <Button id="basicbutton" fx:id="btnRsave" layoutX="534.0" layoutY="1.0" mnemonicParsing="false" onAction="#ConfirmSaveAllData" text="Save" />
+            <Button id="basicbutton" fx:id="btnRcancel" layoutX="473.0" layoutY="1.0" mnemonicParsing="false" onAction="#Cancel" text="Back" />
+            <Button id="deletebutton" fx:id="btnRdeleteRecord" layoutX="336.0" layoutY="1.0" mnemonicParsing="false" onAction="#deleteRecord" stylesheets="@buttonStyle.css" text="Delete this record" />
+            <Button id="basicbutton" fx:id="btnRrefreshRecord" layoutX="14.0" layoutY="1.0" mnemonicParsing="false" onAction="#populateFields" text="Refresh Record" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

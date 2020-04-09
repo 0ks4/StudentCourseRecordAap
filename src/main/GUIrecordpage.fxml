@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="529.0" prefWidth="800.0" stylesheets="@buttonStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainOR">
+   <children>
+      <TableView fx:id="tbvRecordTable" layoutX="18.0" layoutY="77.0" prefHeight="381.0" prefWidth="766.0" stylesheets="@buttonStyle.css">
+        <columns>
+            <TableColumn fx:id="tbcRecordDate" prefWidth="102.0" text="Date" />
+            <TableColumn fx:id="tbcRecordGrade" prefWidth="66.0" text="Grade" />
+            <TableColumn fx:id="tbcRecordStudentName" prefWidth="137.0" text="Student Name" />
+            <TableColumn fx:id="tbcRecordCredits" prefWidth="114.0" text="Credits" />
+            <TableColumn fx:id="tbcRecordCourseName" prefWidth="137.0" text="Course Name" />
+            <TableColumn fx:id="tbcRecordCourseID" prefWidth="89.0" text="CourseID" />
+          <TableColumn fx:id="tbcRecordStudentID" minWidth="0.0" prefWidth="57.0" text="StudentID" />
+          <TableColumn fx:id="tbcRecordID" minWidth="0.0" prefWidth="63.0" text="RecordID" />
+        </columns>
+         <contextMenu>
+            <ContextMenu fx:id="cxmRecord">
+              <items>
+                  <MenuItem fx:id="miView_Student" mnemonicParsing="false" onAction="#callStudentEditFromRecords" text="View Student" />
+                <MenuItem fx:id="miView_Course" mnemonicParsing="false" onAction="#callCourseEditFromRecords" text="View Course" />
+                  <MenuItem fx:id="miEdit_Record" mnemonicParsing="false" onAction="#callRecordEdit" text="Edit Record" />
+                  <MenuItem fx:id="miDeleteRecord" mnemonicParsing="false" onAction="#deleteMultipleRecords" text="Delete" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+         <tooltip>
+            <Tooltip text="Right click for action options / hold ctrl to select multiple rows" />
+         </tooltip>
+      </TableView>
+      <TextField fx:id="txfRecordSearch" layoutX="85.0" layoutY="28.0" stylesheets="@buttonStyle.css" />
+      <Button id="sidebutton" fx:id="btnLoadRecords" layoutX="302.0" layoutY="21.0" mnemonicParsing="false" onAction="#callRecordData" prefHeight="40.0" prefWidth="163.0" stylesheets="@buttonStyle.css" text="Load Data \ Refresh" />
+      <Label layoutX="14.0" layoutY="33.0" prefHeight="17.0" prefWidth="71.0" stylesheets="@buttonStyle.css" text="Search" />
+      <ToggleButton id="basicbutton" fx:id="tglbtnEnableMultiDeleteRecord" layoutX="33.0" layoutY="479.0" mnemonicParsing="false" onAction="#EnableMultiDeleteRecords" stylesheets="@buttonStyle.css" text="Enable multi-delete" />
+      <Button id="deletebutton" fx:id="btnDeleteMultipleRecords" layoutX="189.0" layoutY="479.0" mnemonicParsing="false" onAction="#deleteMultipleRecords" stylesheets="@buttonStyle.css" text="Delete all selected" visible="false" />
+      <Label fx:id="lblMultiDeleteInstructionRecord" layoutX="332.0" layoutY="471.0" text="Select multiple rows for deletion by selecting rows" visible="false" />
+      <Label fx:id="lblMultiDeleteInstructionRecord1" layoutX="336.0" layoutY="492.0" text="with left mouse button and holding control" visible="false" />
+   </children>
+</AnchorPane>

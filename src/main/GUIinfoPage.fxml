@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox stylesheets="@buttonStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainOR">
+   <children>
+      <AnchorPane prefHeight="364.0" prefWidth="600.0" stylesheets="@buttonStyle.css">
+         <children>
+            <Button id="basicbutton" fx:id="btnInfoOk" layoutX="534.0" layoutY="325.0" mnemonicParsing="false" onAction="#closeInfo" stylesheets="@buttonStyle.css" text="OK" />
+            <TextArea editable="false" layoutX="32.0" layoutY="24.0" prefHeight="275.0" prefWidth="550.0" stylesheets="@buttonStyle.css" text="This app is a practice assignment made for simulated student, course and record management. The main purpose of this application is for me to demonstrate the use of basic graphic components as a programmer. The secondary purpose of this app is to demonstrate the use of insert/update/delete -clauses in sql -database interaction. There is no data validation features implemented, so you will be able to save null -valued and all kinds of funny information to the database. &#10;&#10;With that being said, have fun testing out this little app, and please, if you find any bugs, please let me know by emailing me to:&#10;&#10;kurkiasko@gmail.com&#10;&#10;With best regards, &#10;&#10;Asko,&#10;Developer of this app" wrapText="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

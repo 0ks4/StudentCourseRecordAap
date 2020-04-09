@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="mainWindow" prefHeight="575.0" prefWidth="936.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainOR">
+    <stylesheets>
+
+    </stylesheets>
+   <left>
+      <ToolBar orientation="VERTICAL" prefHeight="545.0" prefWidth="130.0" stylesheets="@buttonStyle.css" BorderPane.alignment="CENTER">
+        <items>
+          <Button id="sidebutton" fx:id="btnOpisk" mnemonicParsing="false" onAction="#callStudentPage" prefHeight="44.0" prefWidth="116.0" stylesheets="@buttonStyle.css" text="Students" />
+            <Button id="sidebutton" fx:id="btnKurs" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#callCoursePage" prefHeight="44.0" prefWidth="116.0" stylesheets="@buttonStyle.css" text="Courses" />
+            <Button id="sidebutton" fx:id="btnSuor" layoutX="10.0" layoutY="58.0" mnemonicParsing="false" onAction="#callRecordPage" prefHeight="44.0" prefWidth="116.0" stylesheets="@buttonStyle.css" text="Records" />
+        </items>
+      </ToolBar>
+   </left>
+   <center>
+       <AnchorPane stylesheets="@buttonStyle.css">
+           <children>
+               <Label layoutX="109.0" layoutY="115.0" prefHeight="109.0" prefWidth="382.0" text="Mr. StRApp" textFill="#edeff2">
+                   <font>
+                       <Font name="Comic Sans MS Bold" size="64.0" />
+                   </font>
+               </Label>
+               <Label layoutX="127.0" layoutY="224.0" text="The Student-Record Application" textFill="#edeff2">
+                   <font>
+                       <Font name="Comic Sans MS" size="24.0" />
+                   </font>
+               </Label>
+               <Label layoutX="230.0" layoutY="97.0" text="Welcome to " textFill="#edeff2">
+                   <font>
+                       <Font name="Comic Sans MS" size="24.0" />
+                   </font>
+               </Label>
+               <Label layoutX="269.0" layoutY="284.0" text="Version 1.0" textFill="#edeff2">
+                   <font>
+                       <Font name="Comic Sans MS" size="12.0" />
+                   </font>
+               </Label>
+           </children>
+       </AnchorPane>
+   </center>
+   <top>
+      <HBox>
+         <children>
+            <MenuBar fx:id="mbaMainBar" onMouseDragged="#onMenuBarDragged" onMousePressed="#onMenuBarPressed" onMouseReleased="#onMenuBarReleased" prefHeight="30.0" prefWidth="864.0" stylesheets="@buttonStyle.css" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu id="menu" mnemonicParsing="false" text="Options">
+                  <items>
+                        <MenuItem fx:id="miTopStudents" mnemonicParsing="false" onAction="#callStudentPage" text="Students" />
+                    <MenuItem fx:id="miTopCourses" mnemonicParsing="false" onAction="#callCoursePage" text="Courses" />
+                        <MenuItem fx:id="miTopRecords" mnemonicParsing="false" onAction="#callRecordPage" text="Records" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                        <MenuItem fx:id="miTopInfo" mnemonicParsing="false" onAction="#callAppInfo" text="Info" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox>
+               <children>
+                  <Button id="topbutton" fx:id="btnSuppress" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="30.0" prefWidth="37.0" stylesheets="@buttonStyle.css" text="_" />
+                  <Button id="topbutton" fx:id="btnClose" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#systemExit" prefHeight="30.0" prefWidth="34.0" stylesheets="@buttonStyle.css" text="X" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

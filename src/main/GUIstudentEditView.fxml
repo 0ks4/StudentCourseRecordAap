@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="550.0" stylesheets="@buttonStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.StudentEditPage">
+   <children>
+      <VBox layoutX="31.0" layoutY="21.0" prefHeight="169.0" prefWidth="542.0">
+         <children>
+            <GridPane layoutX="31.0" layoutY="48.0" prefHeight="142.0" prefWidth="542.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="109.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="155.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="0.0" prefWidth="33.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="0.0" prefWidth="75.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="171.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="16.0" prefWidth="78.0" text="StudentID" />
+                  <Label text="First name" GridPane.rowIndex="1" />
+                  <Label text="Last name" GridPane.rowIndex="2" />
+                  <Label text="ZIP" GridPane.columnIndex="3" />
+                  <Label text="ZIP location" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label text="Email" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <TextField fx:id="txfID" disable="true" editable="false" prefHeight="26.0" prefWidth="119.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="txfFirstName" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txfLastName" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="txfZIP" disable="true" GridPane.columnIndex="4" />
+                  <TextField fx:id="txfZIPloc" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <TextField fx:id="txfEmail" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Label text="Address" GridPane.rowIndex="3" />
+                  <TextField fx:id="txfAddress" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="txfPhone" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <Label text="Phone" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Button id="basicbutton" fx:id="btnEditInfo" mnemonicParsing="false" onAction="#enableFields" text="Edit information" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <Button id="basicbutton" fx:id="btnGenerate" mnemonicParsing="false" onAction="#generateData" text="Generate" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <TableView fx:id="tbvRecords" layoutX="15.0" layoutY="177.0" prefHeight="315.0" prefWidth="568.0">
+        <columns>
+            <TableColumn fx:id="tbcRecDate" prefWidth="75.0" text="Date" />
+          <TableColumn fx:id="tbcRecID" prefWidth="75.0" text="RecordID" />
+          <TableColumn fx:id="tbcCourseName" prefWidth="226.0" text="Course name" />
+            <TableColumn fx:id="tbcGrade" prefWidth="91.0" text="Grade" />
+            <TableColumn fx:id="tbcCredits" prefWidth="83.0" text="Credits" />
+            <TableColumn fx:id="tbcCourseID" prefWidth="92.0" text="CourseID" />
+        </columns>
+         <tooltip>
+            <Tooltip text="Right click for action options / hold ctrl to select multiple rows" />
+         </tooltip>
+         <contextMenu>
+            <ContextMenu fx:id="cxmRecordsMenu">
+              <items>
+                <MenuItem fx:id="miRecordsViewCourse" mnemonicParsing="false" onAction="#callCourseEditPageFromStudentEditPage" text="View Course" />
+                  <MenuItem fx:id="miRecordsDeleteThisRecord" mnemonicParsing="false" onAction="#confirmDeletionOfRecords" text="Delete Record(s)" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <AnchorPane layoutX="2.0" layoutY="495.0" prefHeight="33.0" prefWidth="600.0">
+         <children>
+            <Button id="basicbutton" fx:id="btnSave" layoutX="534.0" layoutY="1.0" mnemonicParsing="false" onAction="#StudentSaveButtonPressed" text="Save" />
+            <Button id="basicbutton" fx:id="btnCancel" layoutX="473.0" layoutY="1.0" mnemonicParsing="false" onAction="#Cancel" text="Back" />
+            <Button id="deletebutton" fx:id="btnDelete" layoutX="336.0" layoutY="1.0" mnemonicParsing="false" onAction="#confirmStudentDelete" stylesheets="@buttonStyle.css" text="Delete this student" />
+            <Button id="basicbutton" fx:id="btnAddRecord" layoutX="14.0" layoutY="1.0" mnemonicParsing="false" onAction="#callCourseSelectPage" text="Add Record" />
+            <Button id="basicbutton" fx:id="btnRefreshrecord" layoutX="103.0" layoutY="1.0" mnemonicParsing="false" onAction="#populateRecords" text="Refresh Records" />
+            <Button id="deletebutton" fx:id="btnDeleteRecord" layoutX="212.0" layoutY="1.0" mnemonicParsing="false" onAction="#confirmDeletionOfRecords" stylesheets="@buttonStyle.css" text="Delete Records" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

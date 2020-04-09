@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="531.0" prefWidth="807.0" stylesheets="@buttonStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainOR">
+   <children>
+      <TableView fx:id="tbvPhilosophyTable" layoutX="16.0" layoutY="82.0" prefHeight="368.0" prefWidth="776.0" stylesheets="@buttonStyle.css">
+         <columns>
+            <TableColumn fx:id="tbcCourseIDP" prefWidth="75.0" text="CourseID" />
+            <TableColumn fx:id="tbcNameP" prefWidth="202.0" text="Name" />
+            <TableColumn fx:id="tbcFaculty" prefWidth="90.0" text="Faculty" />
+            <TableColumn fx:id="tbcCreditsP" prefWidth="115.0" text="Credits" />
+            <TableColumn fx:id="tbcDescriptionP" prefWidth="649.0" text="Description" />
+         </columns>
+         <contextMenu>
+            <ContextMenu fx:id="cxmCourse">
+               <items>
+                  <MenuItem fx:id="New_Course" mnemonicParsing="false" onAction="#callCourseNew" text="New" />
+                  <MenuItem fx:id="View_edit_Course" mnemonicParsing="false" onAction="#callCourseEdit" text="View /Edit" />
+                  <MenuItem fx:id="Add_Record_For_This_Course" mnemonicParsing="false" onAction="#addRecordForSelectedCourse" text="Add Record" />
+                  <MenuItem fx:id="Delete_Course" mnemonicParsing="false" onAction="#callCourseDelete" text="Delete" />
+               </items>
+            </ContextMenu>
+         </contextMenu>
+         <tooltip>
+            <Tooltip text="Right click for action options / hold ctrl to select multiple rows" />
+         </tooltip>
+      </TableView>
+      <Label layoutX="14.0" layoutY="33.0" stylesheets="@buttonStyle.css" text="Select Faculty" />
+      <ChoiceBox fx:id="cbxFaculty" layoutX="125.0" layoutY="28.0" prefWidth="150.0" />
+      <Button id="sidebutton" fx:id="btnLoadCourses" layoutX="308.0" layoutY="21.0" mnemonicParsing="false" onAction="#callCourseData" prefHeight="33.0" prefWidth="164.0" stylesheets="@buttonStyle.css" text="Load Data \ Refresh" />
+      <Button id="basicbutton" fx:id="btnLoadCourses1" layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#callCourseData" prefHeight="33.0" prefWidth="164.0" stylesheets="@buttonStyle.css" text="Select" visible="false" />
+      <ToggleButton id="basicbutton" fx:id="tglbtnEnableMultiDeleteCourse" layoutX="36.0" layoutY="481.0" mnemonicParsing="false" onAction="#EnableMultiDeleteCourses" stylesheets="@buttonStyle.css" text="Enable multi-delete" />
+      <Button id="deletebutton" fx:id="btnDeleteMultipleCourses" layoutX="200.0" layoutY="481.0" mnemonicParsing="false" onAction="#deleteMultipleCourses" stylesheets="@buttonStyle.css" text="delete all selected" visible="false" />
+      <Label fx:id="lblMultiDeleteInstructionC" layoutX="390.0" layoutY="473.0" text="Select multiple rows for deletion by selecting rows " visible="false" />
+      <Label fx:id="lblMultiDeleteInstructionC1" layoutX="390.0" layoutY="498.0" text="with left mouse button and holding control" visible="false" />
+   </children>
+</AnchorPane>

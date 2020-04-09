@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="520.0" prefWidth="800.0" stylesheets="@buttonStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.CourseSelectPage">
+   <children>
+      <TableView fx:id="tbvCourseSelect" layoutX="16.0" layoutY="95.0" prefHeight="312.0" prefWidth="776.0" stylesheets="@buttonStyle.css">
+         <columns>
+            <TableColumn fx:id="tbcCourseID" prefWidth="75.0" text="CourseID" />
+            <TableColumn fx:id="tbcName" prefWidth="202.0" text="Name" />
+            <TableColumn fx:id="tbcCredits" prefWidth="90.0" text="Credits" />
+            <TableColumn fx:id="tbcFaculty" prefWidth="90.0" text="Faculty" />
+            <TableColumn fx:id="tbcDescription" prefWidth="649.0" text="Description" />
+         </columns>
+      </TableView>
+      <Label layoutX="277.0" layoutY="33.0" stylesheets="@buttonStyle.css" text="Select Faculty" />
+      <ChoiceBox fx:id="cbxFaculty" layoutX="392.0" layoutY="28.0" prefWidth="150.0" />
+      <Button id="basicbutton" fx:id="btnSaveRecord" layoutX="679.0" layoutY="482.0" mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="26.0" prefWidth="114.0" stylesheets="@buttonStyle.css" text="Save Record" />
+      <ChoiceBox fx:id="cbxGrade" layoutX="159.0" layoutY="482.0" prefHeight="25.0" prefWidth="41.0" stylesheets="@buttonStyle.css" />
+      <Label fx:id="lblStudentsGrade" layoutX="32.0" layoutY="487.0" stylesheets="@buttonStyle.css" text="Students' grade: " />
+      <Label fx:id="lblInstruction" layoutX="14.0" layoutY="65.0" stylesheets="@buttonStyle.css" text="Please select a course from the table, a grade and the completion date of the course for this record" />
+      <DatePicker fx:id="dtpDatePicker" layoutX="353.0" layoutY="482.0" prefHeight="26.0" prefWidth="134.0" stylesheets="@buttonStyle.css" />
+      <Button id="basicbutton" fx:id="btnCancel" layoutX="599.0" layoutY="482.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="26.0" prefWidth="58.0" stylesheets="@buttonStyle.css" text="Back" />
+      <Label fx:id="lblCompletionDate" layoutX="241.0" layoutY="487.0" stylesheets="@buttonStyle.css" text="completion date" />
+      <Label layoutX="14.0" layoutY="33.0" stylesheets="@buttonStyle.css" text="StudentID: " />
+      <TextField fx:id="txfStudentID" disable="true" editable="false" layoutX="110.0" layoutY="28.0" prefHeight="26.0" prefWidth="99.0" />
+      <Label layoutX="14.0" layoutY="14.0" stylesheets="@buttonStyle.css" text="Add course to " />
+   </children>
+</AnchorPane>
